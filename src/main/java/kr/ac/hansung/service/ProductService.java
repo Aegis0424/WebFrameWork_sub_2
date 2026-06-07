@@ -47,8 +47,11 @@ public class ProductService {
         return productRepository.findAll(pageable);
     }
 
+
+
     @Transactional(readOnly = true)
     public Page<Product> searchProducts(String keyword, Pageable pageable) {
+
         return productRepository.findByNameContaining(keyword, pageable);
     }
 }
