@@ -23,6 +23,7 @@ public class ProductController {
     public String list(
             @RequestParam(required = false) String keyword,
             @RequestParam(defaultValue = "0") int page,
+
             @RequestParam(defaultValue = "5") int size,
             Model model) {
 
@@ -47,12 +48,16 @@ public class ProductController {
 
     @GetMapping("/add")
     public String addForm(Model model) {
+
+
         model.addAttribute("product", new ProductDto());
         return "products/add";
     }
 
     @PostMapping
     public String save(@ModelAttribute ProductDto dto) {
+
+
         productService.save(dto);
         return "redirect:/products";
     }
