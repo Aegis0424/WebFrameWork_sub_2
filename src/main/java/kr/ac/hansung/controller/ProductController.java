@@ -26,6 +26,7 @@ public class ProductController {
             @RequestParam(defaultValue = "5") int size,
             Model model) {
 
+
         String normalizedKeyword = (keyword != null && !keyword.isBlank()) ? keyword : null;
         PageRequest pageRequest = PageRequest.of(page, size, Sort.by("id"));
 

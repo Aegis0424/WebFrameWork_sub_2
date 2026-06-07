@@ -44,6 +44,7 @@ public class ProductService {
 
     @Transactional(readOnly = true)
     public Page<Product> getProducts(Pageable pageable) {
+
         return productRepository.findAll(pageable);
     }
 
